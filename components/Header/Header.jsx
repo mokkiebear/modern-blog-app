@@ -18,7 +18,7 @@ const Header = () => {
                 <div className="md:float-left block">
                     <Link href="/">
                         <span className="cursor-pointer font-bold text-4xl text-white">
-                            Maxxi's Blog - моя жизнь и не только.
+                            Название - Блог за полдня!)
                         </span>
                     </Link>
                 </div>
