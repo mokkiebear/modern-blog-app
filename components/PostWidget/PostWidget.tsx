@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { getRecentPosts, getSimilarPosts } from '../../services';
 
-const PostWidget = ({ categories, slug }) => {
+const PostWidget = ({ categories, slug }: any) => {
     const [relatedPosts, setRelatedPosts] = useState([]);
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const PostWidget = ({ categories, slug }) => {
             <h3 className="text-xl mb-8 font-semibold border-b pb-4">
                 {slug ? 'Похожие посты' : 'Новые посты'}
             </h3>
-            {relatedPosts.map((post) => (
+            {relatedPosts.map((post: any) => (
                 <div key={post.slug} className="flex items-center w-full mb-4">
                     <div className="w-16 flex-none">
                         <img 
@@ -37,7 +37,7 @@ const PostWidget = ({ categories, slug }) => {
                         <p className="text-gray-500 font-xs">
                             {moment(post.createdAt).format('MMM DD, YYYY')}
                         </p>
-                        <Link href={`/post/${post.slug}`} className="text-md ">
+                        <Link href={`/post/${post.slug}`}>
                             {post.title}
                         </Link>
                     </div>

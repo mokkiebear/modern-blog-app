@@ -4,7 +4,7 @@ import parse from 'html-react-parser';
 
 import { getComments } from '../../services';
 
-const Comments = ({ slug }) => {
+const Comments = ({ slug }: any) => {
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
@@ -19,7 +19,7 @@ const Comments = ({ slug }) => {
                     <h3 className="text-xl mb-8 font-semibold border-b pb-4">
                         Комментариев: {comments.length}
                     </h3>
-                    {comments.map((comment) => (
+                    {comments.map((comment: any) => (
                         <div key={comment.createdAt} className="border-b border-gray-100 mb-4 pb-4">
                             <p className="mb-4">
                                 <span className="font-semibold">

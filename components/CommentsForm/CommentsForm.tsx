@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 
 import { submitComment } from '../../services';
 
-const CommentsForm = ({ slug }) => {
+const CommentsForm = ({ slug }: any) => {
     const [error, setError] = useState(false);
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
     const commentEl = useRef<HTMLTextAreaElement>(null);
@@ -11,8 +11,12 @@ const CommentsForm = ({ slug }) => {
     const storeDataEl = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
-        nameEl.current?.value = localStorage.getItem('name');
-        emailEl.current?.value = localStorage.getItem('email');
+        if (nameEl.current) {
+            nameEl.current.value = localStorage.getItem('name') || '';
+        }
+        if (emailEl.current) {
+            emailEl.current.value = localStorage.getItem('email') || '';
+        }
     }, []);
 
     const handleSubmitBtnClick = () => {

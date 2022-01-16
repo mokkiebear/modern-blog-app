@@ -2,7 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { GraphQLClient, gql } from 'graphql-request';
 
-const graphqlApi = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
+const graphqlApi = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT || '';
 
 type Data = {
   name: string
