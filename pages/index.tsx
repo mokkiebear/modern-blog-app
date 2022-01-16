@@ -1,8 +1,8 @@
-import Head from 'next/head';
-import { PostCard, PostWidget, Categories } from '../components';
+import Head from "next/head";
+import { PostCard, PostWidget, Categories } from "../components";
 
-import { getPosts } from '../services';
-import FeaturedPosts from './../sections/FeaturedPosts/FeaturedPosts';
+import { getPosts } from "../services";
+import FeaturedPosts from "./../sections/FeaturedPosts/FeaturedPosts";
 
 export default function Home({ posts }: { posts: any[] }) {
   return (
@@ -27,7 +27,7 @@ export default function Home({ posts }: { posts: any[] }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export async function getStaticProps() {
@@ -35,7 +35,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts
-    }
+      posts,
+    },
   };
 }
